@@ -1,0 +1,36 @@
+.carousel-control-next {
+    right: -7%;
+    background-color: #fff;
+    width: 7%;
+    height: 50%;
+    transform: translateY(50%);
+}
+.carousel-control-prev {
+    left: -7%;
+    background-color: #fff;
+    width: 7%;
+    height: 50%;
+    transform: translateY(50%);
+}
+
+#carouselExampleDark {
+    position: relative;
+}
+#carouselExampleDark .carousel-item {
+    position: relative;
+    height: 100vh;
+    height: 400px; 
+    overflow: hidden;
+}
+#carouselExampleDark .carousel-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  
+    object-position: center;
+    display: block;
+}
+
+
+
