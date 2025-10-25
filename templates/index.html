@@ -148,6 +148,38 @@
         </div>
     </div>
 
+
+
+    <section>
+        <form action="/form" method="post">
+            <input type="text" name="user-text"><br>
+            <input type="number" name="user-number"><br>
+            <button type="reset">Очислити</button>
+            <button type="submit">Надіслати</button>
+        </form>
+        <h2>Відправка даних без перезавантаження сторінки</h2>
+        <form action="/form" method="post">
+            <input type="text" name="user-text"><br>
+            <input type="number" name="user-number"><br>
+            <button type="reset">Очислити</button>
+            <button id="intercept-submit" type="submit">Надіслати</button>
+        </form>
+        <div id="js-form-result"></div>
+    </section>
+    <hr>
+    <section>
+        <h2>Відправка даних на сервер</h2>
+        <textarea name="text-data" id="text-data"></textarea><br>
+        <button id="save-data-btn">Відправити на сервер</button>
+        <div id="save-data-result"></div>
+    </section>
+
+    <section>
+        <button id="get-data-btn">отримати дані</button>
+        <div id="get-data-result"></div>
+    </section>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
