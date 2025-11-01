@@ -7,7 +7,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body>
@@ -77,13 +77,16 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="/static/images/news.jpeg" class="d-block w-100" alt="">
+                {% for car in cars %}
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{{url_for('static', filename='images/')}}{{car.img}} " class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5 style="color: white;">{{car.title}}</h5>
+                        <p>{{car.descriptin}}</p>
                     </div>
                 </div>
+                {% endfor %}
+                <!--
                 <div class="carousel-item" data-bs-interval="2000">
                     <img src="/static/images/new-cupra-tavascan-images-medium.avif" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
@@ -98,6 +101,7 @@
                         <p>Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
+            -->
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                 data-bs-slide="prev">
@@ -117,39 +121,40 @@
     https://tailwindcss.com/
     -->
 
-    <div class="card">
-        <img src="" class="card-img-top" alt="...">
+    <div class="cards-container">
+        {% for car in cars_for_sale %}
+        <div class="card">
+            <img src="{{url_for('static', filename='images/')}}{{car.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{car.title}}</h5>
+                <p class="card-text">{{car.descriptin}}</p>
+                <a href="#" class="btn btn-primary">Детальніше</a>
+            </div>
+        </div>
+        {% endfor %}
+        <!--<div class="card">
+            <img src="/static/images/CUPRATerramarVZ265к.с.DSG4Drive.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
 
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card">
+            <img src="/static/images/FormentorVZ2.0TSI333ксDSG4Drive.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <img src="" class="card-img-top" alt="...">
+-->
 
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="" class="card-img-top" alt="...">
-
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-
-
-
+    <!--
     <section>
         <form action="/form" method="post">
             <input type="text" name="user-text"><br>
@@ -178,8 +183,11 @@
         <button id="get-data-btn">отримати дані</button>
         <div id="get-data-result"></div>
     </section>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
+
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
