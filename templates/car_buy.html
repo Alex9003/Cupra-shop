@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUPRA Terramar - Purchase</title>
+    <link rel="stylesheet" href="/static/css/style_car_buy.css">
+</head>
+<body>
+    <section>
+        <h1>Buy a Car</h1>
+        
+        <div class="container">
+            <!-- Фотографія зліва -->
+            <div class="car-image">
+                <img src="{{ url_for('static', filename='images/CUPRATerramarMID204к.с.DSG4Drive.jpg') }}" alt="CUPRA Terramar">
+            </div>
+            
+            <!-- Форма праворуч -->
+            <div class="car-form">
+                <form action="/buy_car" method="post">
+                    <!-- Інформація про модель -->
+                    <div class="form-info">
+                        <div class="info-label">Модель автомобіля:</div>
+                        <input type="text" id="car_model" name="car_model" value="CUPRA Terramar MID 204 к.с. DSG 4Drive" readonly>
+                    </div>
+                    
+                    <!-- Інформація про вартість -->
+                    <div class="form-info">
+                        <div class="info-label">Вартість:</div>
+                        <input type="text" id="price" name="price" value="UAH 1 896 401,56" readonly>
+                    </div>
+                    
+                    <!-- Вибір кольору -->
+                    <label for="color">Оберіть колір:</label>
+                    <select id="color" name="color">
+                        <option value="red">Червоний</option>
+                        <option value="blue">Синій</option>
+                        <option value="black">Чорний</option>
+                        <option value="white">Білий</option>
+                    </select>
+                    
+                    <br><br>
+                    
+                    <!-- Спосіб оплати -->
+                    <label for="payment_method">Спосіб оплати:</label>
+                    <select id="payment_method" name="payment_method">
+                        <option value="credit_card">Кредитна картка</option>
+                        <option value="debit_card">Дебетова картка</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank_transfer">Банківський переказ</option>
+                    </select>
+                    
+                    <br><br>
+                    
+                    <!-- Кнопка покупки -->
+                    <button type="submit">Придбати зараз</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <div class="tech-specs">
+        <h2>Технічні характеристики</h2>
+        <div class="specs-grid">
+            <div class="spec-item">
+                <div class="spec-title">Двигун</div>
+                <div class="spec-value">Бензин | 150 кВт (204 к.с.) | 2,0 л</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-title">Витрати пального</div>
+                <div class="spec-value">8,0 л/100 км</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-title">Привод</div>
+                <div class="spec-value">Повний привод</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-title">Трансмісія</div>
+                <div class="spec-value">7-ступ. DSG</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-title">Диски</div>
+                <div class="spec-value">Легкосплавні диски 18" "ATOMIC"</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-title">Викиди CO₂</div>
+                <div class="spec-value">171 г/км</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-title">Колір кузова</div>
+                <div class="spec-value">Білий металік "Glacial White"</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-title">Колір інтер'єру</div>
+                <div class="spec-value">Синій "Deep Ocean"</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-title">Оббивка сидіннь</div>
+                <div class="spec-value">Чорний "Soul black"</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

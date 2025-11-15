@@ -6,8 +6,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 USER = {
-    'useremail': 'text@gmail.com',
-    'password': '1'
+    'useremail': 'test@gmail.com',
+    'password': '123345678'
 }
 
 app = Flask(__name__)
@@ -128,6 +128,10 @@ def login():
         else:
             return 'Непвельні дані'
     return render_template('login.html')
+
+@app.route('/car_buy', methods=['GET'])
+def car_buy():
+    return render_template('car_buy.html')
 
 @app.route('/logout', methods=['GET'])
 def logout():

@@ -128,7 +128,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{car.title}}</h5>
                 <p class="card-text">{{car.descriptin}}</p>
-                <a href="#" class="btn btn-primary">Детальніше</a>
+                <a href="{{ url_for('car_buy') }}" class="btn btn-primary">Детальніше</a>
             </div>
         </div>
         {% endfor %}
